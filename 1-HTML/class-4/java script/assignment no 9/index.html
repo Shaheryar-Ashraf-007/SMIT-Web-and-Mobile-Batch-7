@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment no 9</title>
+</head>
+<body>
+    <script>
+
+        // calculte the lenght of string 
+        let str = prompt("enter you sentence");
+        function strLenght(str){
+            return str.strLenght;
+
+        }
+
+        console.log(strLenght(str));
+
+        // concatinate two strings 
+
+
+        let str1 = prompt("Enter String 1")
+        let str2 = prompt("Enter string 2")
+        function concateStr(str1, str2){
+            return str.concat(str2)
+
+        }
+
+        console.log(concateStr(str1, str2))
+
+
+        // determine if string is empty 
+
+        let str3 = prompt("Enter a String : ");
+
+        function concateStr(str3){
+            if (str3.trimStart() == "") {
+                return console.log("String is Empty");
+            }
+            else{
+                console.log("String is not Empty");
+            }
+            console.log(str3);
+        }
+        concateStr(str3);  
+
+        // count the numbers of vovels in a string 
+
+
+        let str4 = prompt("Enter a String : ");
+        let lowerStr = str4.toLowerCase()
+        function checkVowels(){
+            let count = 0
+
+            for (let index = 0; index < str4.length; index++) {   
+
+                if (lowerStr[index] == "a" || lowerStr[index] == "e" || lowerStr[index] == "i" || lowerStr[index] == "o" || lowerStr[index] == "u") {
+                    count++;
+                }
+            }
+            console.log(`Total Vowels in a string is ${count}`);
+            console.log(str4);
+        }
+        checkVowels(str4);
+
+
+        // reverse the string 
+
+
+
+        let str5 = prompt("Enter a String : ");
+
+        function reverseString(str) {
+            return str5.split("").reverse().join("");
+        }
+        console.log("Original String ", str5);
+        console.log(`Reversed String : ${reverseString(str5)}`);
+
+        // check the string if it is palindrome 
+
+        let str6 = prompt("Enter a String :");
+        function isPalindrome(str6) {
+            const originalStr = str6.toLowerCase().replace(/[^a-z0-9]/g, '');
+        
+            const reversedStr = originalStr.split('').reverse().join('');
+
+            return originalStr === reversedStr; 
+        }
+
+        if (isPalindrome(str6)) {
+            console.log(`${str6} is a palindrome`)
+        }
+        else{
+            console.log(`${str6} is not a palindrome`)
+        }
+
+
+        // conver the string into upper case 
+
+
+        let str7 = prompt("Enter a String :");
+        function uppercaseStr(str7) {
+            return str.toUpperCase();
+        }
+        console.log(uppercaseStr(str7));
+
+
+        // remove all the alphabets od the character in the string 
+
+        let myString = prompt("Enter a String :");
+        let charToFind = prompt("Enter a Character to Find :");
+
+        function findFirstOccurrence(str, char) {
+            const index = str.indexOf(char);
+        
+            if (index !== -1) {
+            return index; 
+            } else {
+            return "Character not found"; 
+            }
+        }   
+        let firstIndex = findFirstOccurrence(myString, charToFind);
+        console.log("The first occurrence of '" + charToFind + "' is at index:", firstIndex); 
+
+
+
+        
+        let str8 = prompt("Enter a String :");
+        let charToReplace = prompt("Enter a char to replace :");
+        let replacementChar = prompt("Enter a char for replacement :");
+
+        function replaceAll(str, charToReplace, replacementChar) {
+            return str.split(charToReplace).join(replacementChar);
+        }
+        
+        console.log(replaceAll(str8, charToReplace, replacementChar));
+
+        // enter a string which is trim 
+
+
+        let str9 = prompt("Enter a String :");
+        function trimString(str9) {
+            return str9.trim();
+        }
+        console.log(trimString(str9)); 
+
+
+        // entere theg string to calculate the words 
+
+
+        let str10 = prompt("Enter a String :")
+        function countWords(str10) {
+            const trimmedStr = str40.trim();
+            if (trimmedStr === "") {
+            return 0;
+            }
+            const words = trimmedStr.split(/\s+/);
+            return words.length;
+        }
+        console.log(`Total Words : ${countWords(str10)}`);
+
+
+        // check the string which is isnumeric 
+
+        let str11 = prompt("Enter a String : ");
+        function isNumeric(str11) {
+            if (isNaN(str11)) {
+            return false; 
+            }
+            for (let i = 0; i < str.length; i++) {
+            if (str.charCodeAt(i) < 48 || str11.charCodeAt(i) > 57) { 
+                return false;
+            }
+            }
+            return true; 
+        }
+        console.log(isNumeric(str11));
+        
+
+        // check the email is valid or not 
+
+
+        let email = prompt("Enter Your Email :");
+        function isValidEmail(email) {
+            const exp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return exp.test(String(email).toLowerCase());
+        }
+        if (isValidEmail(email)) {
+            console.log("Email is Valid");
+        } else {
+            console.log("Email is Not Valid");
+        }
+        // enter a url to chec the the domain is correct 
+
+
+        let url = prompt("Enter Your URL :");
+
+        function extractDomain(url) {
+            try {
+            const urlObj = new URL(url);
+            return urlObj.hostname;
+            } catch (error) {
+            console.error("Invalid URL:", url); 
+            return null; 
+            }
+        }
+
+        console.log(extractDomain(url)); 
+
+
+        // check the string to convert the lower case 
+
+        let str12 = prompt("Enter a String :");
+
+        function toTitleCase(str12) {
+            return str12.toLowerCase().split(' ').map(word => {
+            return word[0].toUpperCase() + word.slice(1); 
+            }).join(" ");
+        }
+
+        console.log(toTitleCase(str12));
+
+
+        // check the string to remove the non alphabets 
+
+        let str13 =prompt("Enter a String :");
+
+        function removeNonAlphabetic(str13) {
+            return str.replace(/[^a-zA-Z]/g, '');
+        }  
+        console.log(removeNonAlphabetic(str13)); 
+
+        // check the string is palindrome or not 
+
+        let str14 = prompt("Enter a String :");
+        function isPalindromePermutation(str14) {
+            const charCounts = {}; // Store character counts
+            let oddCount = 0; // Count characters with odd frequencies
+        
+            // Normalize and count characters
+            for (let char of str14.toLowerCase()) {
+            if (char !== ' ') { // Ignore spaces
+                charCounts[char] = (charCounts[char] || 0) + 1; 
+                oddCount += charCounts[char] % 2 ? 1 : -1; 
+            }
+            }
+        
+            return oddCount <= 1; // At most one character can have odd frequency
+        }
+            
+        if (isPalindromePermutation(str14)) {
+            console.log(`${str14} is a Valid Palindrome Permutation`);
+        } else {
+            console.log(`${str14} is an Invalid Palindrome Permutation`);
+        }
+
+
+        // check the string is anagram or not 
+
+        let str15 = prompt("Enter First String :")
+        let str16 = prompt("Enter Second String :")
+
+        function isAnagram(str15, str16) {
+            if (str1.length !== str2.length) {
+            return false;
+            }
+            return str1.toLowerCase().split('').sort().join('') === 
+                str2.toLowerCase().split('').sort().join('');  
+        }
+
+        if (isAnagram(str15,str16)) {
+            console.log(`The ${str15} is an anagram to ${str16}`)
+        } else {
+            console.log(`The ${str15} is not an anagram to ${str16}`)
+        }
+
+        // check the string if the lenght of longest word 
+
+        
+
+
+
+        let str17 = prompt("Enter a String :")
+        function findLongestWord(str17) {
+            const words = str17.split(' ');
+            let longestWord = '';
+        
+            for (const word of words) {
+            if (word.length > longestWord.length) {
+                longestWord = word;
+            }
+            }
+            return longestWord;
+        }
+        console.log(`Longest word in a string is ${findLongestWord(str17)}`)  
+
+
+        // check the string is compress 
+
+        let str18 = prompt("Enter a String :");
+        function compressstr(str18) {
+            if (str18.length === 0) { 
+            return "";
+            }
+        
+            let compressed = "";
+            let currentChar = str18[0]; 
+            let charCount = 1; 
+        
+            for (let i = 1; i < str18.length; i++) {
+            if (str18[i] === currentChar) {
+                charCount++; 
+            } else {
+                compressed += currentChar + charCount; 
+                currentChar = str18[i];
+                charCount = 1; 
+            }
+            }
+        
+            // Append the last character and its count
+            compressed += currentChar + charCount;  
+        
+            return compressed.length < str18.length ? compressed : str18; 
+        }
+        
+        console.log(compressstr(str18));
+
+
+
+        
+
+
+        
+
+        
+
+
+
+
+        
+
+
+
+    </script>
+</body>
+</html>
